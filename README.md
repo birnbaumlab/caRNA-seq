@@ -35,7 +35,7 @@ source('./src/caRNA-seq_preprocessing.R')
 source('./src/caRNA-seq_analysis.R')
 
 # Import data and create Seurat object under default settings
-seurat_obj <- create_seurat(mat_path = './data/filtered_feature_bc_matrix')
+seurat_obj <- create_seurat(mat_path = './data/filtered_feature_bc_matrix.zip')
 ```
 
 
