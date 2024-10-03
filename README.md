@@ -117,6 +117,15 @@ tail(CAR1_markers, n = 10)
 And we find that these marker genes make sense biologically, as CAR1 is in fact the signaling-deficient negative control that we built into our library. Without any signaling domains to drive activation upon antigen binding, it follows that cells expressing this particular construct would show reduced expression of activation markers and increased expression of genes associated with naïve, unactivated T cells, when compared to the other functional CARs in the library.
 
 
+```r
+# Visualize expression of these markers compared to CAR4 and 5 (1928z and 19BBz, clinically-approved pos. ctrls)
+Idents(seurat_obj) <- 'CARID'
+vln_median(seurat_obj, features = c('IL7R', 'LEF1', 'SELL', 'IL2RA', 'GZMB', 'MKI67'),
+           idents = c('CAR1', 'CAR4', 'CAR5'))
+```
+
+
+
 ## Session Info
 
 ```r
