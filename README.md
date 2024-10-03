@@ -11,10 +11,10 @@ caRNA-seq is a scRNA-seq-based platform that allows for the simultaneous measure
 
 ## Broad overview of scripts included in this repository
 
-### caRNA-seq_preprocessing.R
+### [caRNA-seq_preprocessing.R](src/caRNA-seq_preprocessing.R)
 Provides basic dataset preprocessing functionality, including filtering on conventional QC metrics, calling cells by HTO, and calling cells by CAR BC. CAR identity is stored in a metadata column, labeled `CARID`.
 
-### caRNA-seq_analysis.R
+### [caRNA-seq_analysis.R](src/caRNA-seq_analysis.R)
 
 Provides basic analysis functionality, including normalization, clustering, DEG analysis, and geneset scoring, as well as functionality for CAR-level analysis (e.g. CAR distribution analyses).
 
