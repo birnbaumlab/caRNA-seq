@@ -32,11 +32,11 @@ We begin with data import and pre-processing. First, we import our count matrice
 # Setup working directory and source caRNA-seq scripts
 repo_directory <- 'path/to/directory'
 setwd(repo_directory)
-source('./caRNA-seq_preprocessing.R')
-source('./caRNA-seq_analysis.R')
+source('./src/caRNA-seq_preprocessing.R')
+source('./src/caRNA-seq_analysis.R')
 
 # Import data and create Seurat object under default settings
-seurat_obj <- create_seurat(mat_path = './filtered_feature_bc_matrix')
+seurat_obj <- create_seurat(mat_path = './data/filtered_feature_bc_matrix')
 ```
 
 
@@ -74,7 +74,7 @@ At this point, you could then proceed to dimensionality reduction and unsupervis
 
 ```r
 # PCA and cluster
-seurat_obj <- seurat_obj %>% pca() %>% cluster()
+seurat_obj <- seurat_obj %>% pca() %>% cluster(resolution = 0.4)
 ```
 
 
@@ -94,7 +94,8 @@ Alternatively, within a single function call, we can compute pseudobulked data a
 
 
 ```r
-DoAverageHeatmap(seurat_obj, group.by = 'CARID', features = VariableFeatures(seurat_obj))
+DoAverageHeatmap(seurat_obj, group.by = 'CARID', features = VariableFeatures(seurat_obj),
+                 show_row_names = F, name = 'Gene Z Scores')
 ```
 
 
@@ -114,7 +115,7 @@ tail(CAR1_markers, n = 10)
 ```
 
 
-And we find that these marker genes make sense biologically, as CAR1 is in fact the signaling-deficient negative control that we built into our library. Without any signaling domains to drive activation upon antigen binding, it follows that cells expressing this particular construct would show reduced expression of activation markers and increased expression of genes associated with naïve, unactivated T cells, when compared to the other functional CARs in the library.
+And we find that these marker genes make sense biologically, as CAR1 is in fact the signaling-deficient negative control that we built into our library. Without any signaling domains to drive activation upon antigen binding, it follows that cells expressing this particular construct would show reduced expression of activation markers and increased expression of genes associated with naïve, unactivated T cells, when compared to the other functional CARs in the library. We can visualize these differences explicitly by comparing CAR1-expressing cells to those that express the two clinically approved CAR architectures, which are encoded in our library as CAR4 and CAR5 (1928z and 19BBz CARs, respectively).
 
 
 ```r
