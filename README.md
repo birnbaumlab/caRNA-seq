@@ -6,8 +6,7 @@ This repository contains scripts used in the processing of caRNA-seq datasets ge
 
 caRNA-seq is a scRNA-seq-based platform that allows for the simultaneous measurement of genome-wide transcriptional responses induced by a library of diverse CAR molecules, using the detection of CAR-specific barcodes to assign CAR identity to single cells. The functions in these scripts provide basic functionality for caRNA-seq analysis, including cell calling of CAR variants, as well as wrappers for conventional scRNA-seq analysis pipelines (e.g. normalization, clustering, DEG analysis, etc.). These are written to interface with the [Seurat](https://satijalab.org/seurat/) scRNA-seq analysis package (written for v4, should be compatible with v5, although this was not tested).
 
-<!-- For a detailed protocol on the sample preparation required to generate paired transcriptomic and CAR barcode datasets using a 10X Genomics Chromium platform, see [here](linkToPDF, still needs to be inserted!).
--->
+For a detailed protocol on the sample preparation required to generate paired transcriptomic and CAR barcode datasets using a 10X Genomics Chromium platform, see [here](/docs/caRNA-seq_sample_prep_protocol.pdf).
 
 ## Broad overview of scripts included in this repository
 
