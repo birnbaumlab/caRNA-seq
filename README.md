@@ -69,7 +69,7 @@ seurat_obj <- normalize(seurat_obj, workflow = 'SCT', filter_variable_genes = 'T
 ```
 
 
-At this point, you could then proceed to dimensionality reduction and unsupervised clustering of cells. By default, our wrappers use the Leiden algorithm on the basis of the first 30 PCs, but we encourage optimization for each dataset. Cluster markers, alongside CAR membership within individual clusters can then be analyzed to reveal CAR-specific signals.
+At this point, you could then proceed to dimensionality reduction and unsupervised clustering of cells. By default, our wrappers use the Leiden algorithm on the basis of the first 30 PCs, but we encourage optimization for each dataset. Cluster markers, alongside CAR membership within individual clusters, can then be analyzed to reveal CAR-specific signals.
 
 
 ```r
