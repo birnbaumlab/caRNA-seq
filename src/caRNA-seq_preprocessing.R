@@ -134,7 +134,7 @@ CAR_demux <- function(seurat_obj, max_filter = 3, purity_thresh = 0.9, method = 
     CARBC_heatmap(seurat_obj)
   }
   
-  return(seurat_obj)z
+  return(seurat_obj)
 }
 
 '
@@ -407,9 +407,7 @@ plot_global_classifications <- function(seurat_obj) {
     labs(y = 'Total RNA UMIs Detected', title = '', x = '')
   p3 <- vln_median(seurat_obj, features = 'nFeature_RNA', group.by = 'Classification_Global') +
     labs(y = 'Unique Genes Detected', title = '', x = '')
-  p4 <- vln_median(seurat_obj, features = 'percent.mt', group.by = 'Classification_Global') +
-    labs(y = 'Mitochondrial Gene Composition (%)', title = '', x = '')
-  print(p1|p2|p3|p4)
+  print(p1|p2|p3)
 }
 
 import_counts <- function(mat_path) {

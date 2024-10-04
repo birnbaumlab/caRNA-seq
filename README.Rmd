@@ -1,5 +1,7 @@
 ---
 output: github_document
+self_contained: yes
+mode: selfcontained
 ---
 
 # caRNA-seq
@@ -8,7 +10,7 @@ Author: Caleb R. Perez
 
 Compiled: `r format(Sys.Date(), "%B %d, %Y")`
 
-Reference: [Perez et al., 2014](https://www.biorxiv.org/content/10.1101/2024.04.29.591541v1)
+Reference: [Perez et al., 2024](https://www.biorxiv.org/content/10.1101/2024.04.29.591541v1)
 
 ## Introduction
 
@@ -49,7 +51,7 @@ We begin with data import and pre-processing. First, we import our count matrice
 
 ```{r fig.keep = "none"}
 # Setup working directory and source caRNA-seq scripts
-repo_directory <- '/Users/caleb/Dropbox (MIT)/Birnbaum Lab/Manuscripts/caRNA-seq/GitHub'
+repo_directory <- '/Users/caleb/Documents/GitHub/caRNA-seq'
 setwd(repo_directory)
 source('./src/caRNA-seq_preprocessing.R')
 source('./src/caRNA-seq_analysis.R')

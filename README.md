@@ -6,7 +6,7 @@ Author: Caleb R. Perez
 Compiled: October 03, 2024
 
 Reference: [Perez et al.,
-2014](https://www.biorxiv.org/content/10.1101/2024.04.29.591541v1)
+2024](https://www.biorxiv.org/content/10.1101/2024.04.29.591541v1)
 
 ## Introduction
 
@@ -81,7 +81,7 @@ in an `HTO` assay for easy sample demultiplexing.
 
 ``` r
 # Setup working directory and source caRNA-seq scripts
-repo_directory <- "/Users/caleb/Dropbox (MIT)/Birnbaum Lab/Manuscripts/caRNA-seq/GitHub"
+repo_directory <- "/Users/caleb/Documents/GitHub/caRNA-seq"
 setwd(repo_directory)
 source("./src/caRNA-seq_preprocessing.R")
 source("./src/caRNA-seq_analysis.R")
@@ -228,7 +228,7 @@ DoAverageHeatmap(seurat_obj, group.by = "CARID", features = VariableFeatures(seu
     name = "Gene Z Scores")
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-7-2.png)<!-- -->
 
 This analysis seems to suggest that CAR1 drives a unique transcriptional
 profile. We can look specifically at the genes driving this signature
