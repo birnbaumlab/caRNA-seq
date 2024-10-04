@@ -70,7 +70,7 @@ seurat_obj <- filter_seurat(seurat_obj, unique_gene_thresh = 1250, mt_thresh = 5
 ```
 
 
-As a final pre-processing step, we identify CARs expressed by each cell on the basis of CAR BC counts, utilizing the [MULTIseqDemux](https://satijalab.org/seurat/reference/multiseqdemux) algorithm. For each cell, this identifies which CAR BCs are expressed over background levels, allowing discrimination of cells expressing only a single CAR (`Singlet`) from those expressing multiple (`Doublet`), or those expressing none (`Negative`). By default, we keep only cells expressing a single CAR for downstream analysis. We also output a heatmap describing the results the 
+As a final pre-processing step, we identify CARs expressed by each cell on the basis of CAR BC counts, utilizing the [MULTIseqDemux](https://satijalab.org/seurat/reference/multiseqdemux) algorithm. For each cell, this identifies which CAR BCs are expressed over background levels, allowing discrimination of cells expressing only a single CAR (`Singlet`) from those expressing multiple (`Doublet`), or those expressing none (`Negative`). By default, we keep only cells expressing a single CAR for downstream analysis. We also output a heatmap displaying CAR BC expression across all singlets, grouped by assigned `CARID`, which should show CAR BC expression limited to a single CAR.
 
 
 ```{r}

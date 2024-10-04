@@ -123,7 +123,9 @@ over background levels, allowing discrimination of cells expressing only
 a single CAR (`Singlet`) from those expressing multiple (`Doublet`), or
 those expressing none (`Negative`). By default, we keep only cells
 expressing a single CAR for downstream analysis. We also output a
-heatmap describing the results the
+heatmap displaying CAR BC expression across all singlets, grouped by
+assigned `CARID`, which should show CAR BC expression limited to a
+single CAR.
 
 ``` r
 # Assign each cell to individual CARs on the basis of CAR BC expression
