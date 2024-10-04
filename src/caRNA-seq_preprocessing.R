@@ -110,7 +110,7 @@ filter_seurat <- function(seurat_obj, mt_thresh = 10, unique_gene_thresh = 1000)
 - method (str): One of MULTISeq or Purity
 '
 CAR_demux <- function(seurat_obj, max_filter = 3, purity_thresh = 0.9, method = 'MULTISeq',
-                      filter_negatives = TRUE, filter_doublets = TRUE) {
+                      filter_negatives = TRUE, filter_doublets = TRUE, heatmap = TRUE) {
   # Normalize CARBC counts, filter as desired
   cat('Normalizing CAR BC counts...\n')
   seurat_obj <- NormalizeData(seurat_obj, assay='CARBC', normalization.method='CLR', margin = 2)
@@ -130,9 +130,11 @@ CAR_demux <- function(seurat_obj, max_filter = 3, purity_thresh = 0.9, method = 
   cat('Final CAR library representation:')
   print(table(seurat_obj$CARID))
   
-  CARBC_heatmap(seurat_obj)
+  if (heatmap) {
+    CARBC_heatmap(seurat_obj)
+  }
   
-  return(seurat_obj)
+  return(seurat_obj)z
 }
 
 '

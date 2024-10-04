@@ -539,7 +539,6 @@ CAR_contingency_heatmap <- function(seurat_obj, ident1 = NULL, ident2, percentag
                rect_gp = gpar(col = "white", lwd = 2), column_dend_height = unit(1, 'in'),
                row_order = mixedsort(rownames(mat), decreasing = T), ...)
   h <- draw(h)
-  return(h)
 }
 
 ### PSEUDOBULKING METHODS ###
