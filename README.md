@@ -140,7 +140,7 @@ seurat_obj <- CAR_demux(seurat_obj)
     ## Negative  Singlet  Doublet 
     ##     4789    18247     1955
 
-![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](README_files/figure-gfm/CAR_demux-1.png)<!-- -->
 
     ## Filtering out negatives and doublets...
     ## Singlet cell count: 18247.
@@ -152,7 +152,7 @@ seurat_obj <- CAR_demux(seurat_obj)
     ## CAR28 CAR29 CAR30 CAR31 CAR32 CAR33 CAR34 CAR35 CAR36 
     ##   476   530   693   502   661   535   522   549   551
 
-![](README_files/figure-gfm/unnamed-chunk-3-2.png)<!-- -->
+![](README_files/figure-gfm/CAR_demux-2.png)<!-- -->
 
 Following this pre-processing pipeline, we are left only with high
 quality cells that were confidently called to a single CAR in the
@@ -199,7 +199,7 @@ seurat_obj <- seurat_obj %>%
     ## [43] 0.9685754 0.9733097 0.9779606 0.9825761 0.9871071 0.9914792 0.9957825
     ## [50] 1.0000000
 
-![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-2.png)<!-- -->
+![](README_files/figure-gfm/cluster-1.png)<!-- -->![](README_files/figure-gfm/cluster-2.png)<!-- -->
 
 For the sake of this tutorial, we will take a simpler approach, in which
 we calculate the pseudobulked average gene expression profiles for each
@@ -220,17 +220,17 @@ pb_data <- compute_pb_avg(seurat_obj, group.by = "CARID", features = VariableFea
 ComplexHeatmap::Heatmap(pb_data, name = "Gene Z Scores", show_row_names = F)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](README_files/figure-gfm/pseudobulk1-1.png)<!-- -->
 
 Alternatively, within a single function call, we can compute
 pseudobulked data and visualize the results:
 
 ``` r
-DoAverageHeatmap(seurat_obj, group.by = "CARID", features = VariableFeatures(seurat_obj), show_row_names = F,
-    name = "Gene Z Scores")
+p1 <- DoAverageHeatmap(seurat_obj, group.by = "CARID", features = VariableFeatures(seurat_obj),
+    show_row_names = F, name = "Gene Z Scores")
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-7-2.png)<!-- -->
+![](README_files/figure-gfm/pseudobulk2-1.png)<!-- -->
 
 This analysis seems to suggest that CAR1 drives a unique transcriptional
 profile. We can look specifically at the genes driving this signature
@@ -295,7 +295,7 @@ vln_median(seurat_obj, features = c("IL7R", "LEF1", "SELL", "IL2RA", "GZMB", "MK
     "CAR4", "CAR5"))
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](README_files/figure-gfm/CAR1_markers-1.png)<!-- -->
 
 ## Session Info
 
